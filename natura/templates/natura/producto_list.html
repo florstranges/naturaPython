@@ -1,0 +1,26 @@
+{% extends 'natura/base.html' %}
+
+{% block main %}
+
+<div class="formularioDesign my-5">
+    <h2>Buscar producto</h2>
+
+    <form action="">
+        <div>
+            <label for="criterio_nombre">Nombre:</label>
+            <input type="text" name="criterio_nombre" maxlength="100" required id="criterio_nombre">
+        </div>
+
+        <div class="mt-4">
+            <input type="submit" value="Buscar">
+        </div>
+    </form>
+</div>
+
+<ul>
+    {% for producto in productos %}
+    <li>{{producto}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

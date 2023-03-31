@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {% load static %}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog Natura</title>
+
+
+    <!-- CSS -->
+    <link href="{% static 'natura/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'natura/css/styles.css' %}" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="https://logotipoz.com/wp-content/uploads/2021/10/natura-png-transparente.png" type="image/x-icon">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'natura/css/carousel.css' %}" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navbar navbar-expand-md navbar-custom">
+            <div class="container-fluid">
+                <img src="https://logotipoz.com/wp-content/uploads/2021/10/natura-png-transparente.png" alt="Logo Natura" class="logo-natura">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="{% url 'index' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'mis-productos-create' %}">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'productos-list' %}">Buscar Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'consultoras-create' %}">Consultoras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'consultoras-list' %}">Buscar Consultoras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'mis-clientes-create' %}">Pedidos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'clientes-list' %}">Buscar Pedidos</a>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    {% block main %}
+    {% endblock %}
+
+    <!-- FOOTER -->
+    <footer class="container-fluid footer">
+        <p>Página creada en Coderhouse para el curso de Python.</p>
+    </footer>
+
+    <script src="{% static 'natura/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>

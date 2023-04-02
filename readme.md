@@ -1,6 +1,11 @@
 # Proyecto Natura Python
 Web Django creada para Natura Cosmeticos en el curso de Python Coderhouse.
 
+- Descargar el repositorio de Github.
+- Abrir la carpeta en un editor de código, preferentemente Visual Studio Code.
+- En la terminal utilizar el comando 'python manage.py runserver' para iniciar el servidor.
+- Ingresar a 'http://127.0.0.1:800' y comenzar a navegar.
+
 ### *Lista de productos*
 Ingresar en la parte del menú a "Productos". 
 Allí se visualizarán los productos agregados.

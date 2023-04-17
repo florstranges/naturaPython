@@ -127,7 +127,7 @@ class ProfileDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 class MensajeCreate(CreateView):
     model = Mensaje
     fields = '__all__'
-    success_url = reverse_lazy('mensaje-list')
+    success_url = reverse_lazy('mensaje-enviado')
 
 class MensajeList(LoginRequiredMixin, ListView):
     model = Mensaje
@@ -144,3 +144,6 @@ class MensajeDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         user_id = self.request.user.id
         mensajes_id = self.kwargs.get('pk')
         return Mensaje.objects.filter(destinatario=user_id).exists()
+
+def mensajeEnviado(request):
+    return render(request, 'natura/mensaje_enviado.html')

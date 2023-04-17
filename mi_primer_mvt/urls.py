@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from natura.views import (index, about, ProductList, ProductDetail, ProductCreate, ProductUpdate, ProductDelete, SignUp, Login, Logout, ProfileUpdate, ProfileCreate, ProfileDelete, ProfileList, ProfileDetail, MensajeCreate, MensajeDelete, MensajeList)
+from natura.views import (index, about, ProductList, ProductDetail, ProductCreate, ProductUpdate, ProductDelete, SignUp, Login, Logout, ProfileUpdate, ProfileCreate, ProfileDelete, ProfileList, ProfileDetail, MensajeCreate, MensajeDelete, MensajeList, mensajeEnviado)
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -39,7 +39,7 @@ urlpatterns = [
     path('mensaje/enviar', MensajeCreate.as_view(), name='mensaje-enviar'),
     path('mensaje/list', MensajeList.as_view(), name='mensaje-list'),
     path('mensaje/<pk>/delete', MensajeDelete.as_view(), name='mensaje-delete'),
-    
+    path('mensaje-enviado/', mensajeEnviado, name='mensaje-enviado'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

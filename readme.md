@@ -9,4 +9,4 @@ A su vez, los clientes pueden dejar mensajes pidiendo información de algun prod
 
 Este blog lo va a poder utilizar una consultora natura o un grupo de consultoras. 
 
-[Video explicativo](https://youtu.be/0UtFyb8kYJs)
+[Video explicativo](https://youtu.be/BZOwChS3RDA)

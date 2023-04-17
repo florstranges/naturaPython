@@ -1,0 +1,15 @@
+{% extends 'natura/base.html' %}
+
+{% block main %}
+
+<div class="formularioDesign">
+    <h2>Enviar mensaje</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+
+{% endblock %}

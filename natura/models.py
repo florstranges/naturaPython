@@ -1,29 +1,26 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Producto(models.Model):
     nombre = models.CharField(max_length=100)
-    categoria = models.TextField(max_length=250)
-        
+    categoria = models.CharField(max_length=250)
+    descripcion = models.TextField(max_length=1000)
+    precio = models.CharField(max_length=100)
+    fecha = models.DateTimeField(auto_now_add=True)
+    publicado = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name="publicado")
+    imagen = models.ImageField(upload_to='productos')
+
     def __str__(self):
-        return f'{self.nombre} - {self.categoria}'
+        return f'{self.id} - {self.nombre} - {self.categoria}'
 
-
-class Consultora(models.Model):
-    nombre = models.CharField(max_length=100)
-    apellido = models.CharField(max_length=100)
-    codigoCN = models.IntegerField(max_length=7)
-    zona = models.CharField(max_length=100)
+class Profile(models.Model):
+    user = models.OneToOneField(to=User, on_delete=models.CASCADE, related_name='profile')
+    imagen = models.ImageField(upload_to='profiles')
     
     def __str__(self):
-        return f'Consultora: {self.nombre} {self.apellido} CN: {self.codigoCN}'
+        return f'{self.id} - {self.user}' 
 
-
-class Cliente(models.Model):
-    nombre = models.CharField(max_length=100)
-    apellido = models.CharField(max_length=100)
-    telefono = models.CharField(max_length=20)
-    pedido = models.TextField(max_length=500)
-    consultora = models.CharField(max_length=200)
-    
-    def __str__(self):
-        return f'Pedido n°{self.id}. Cliente: {self.nombre} {self.apellido}. Consultora: {self.consultora}'
+class Mensaje(models.Model):
+    mensaje = models.TextField(max_length=1000)
+    email = models.EmailField()
+    destinatario = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name='destinatario')

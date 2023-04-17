@@ -2,19 +2,10 @@
 
 {% block main %}
 
-<h1>Productos</h1>
-
-<ul>
-    {% for producto in productos %}
-    <li>{{producto}}</li>
-    {% endfor %}
-</ul>
-
-
 <div class="formularioDesign">
     <h2>Agregar producto</h2>
 
-    <form action="{% url 'mis-productos-create' %}" method="POST">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{form.as_p}}
         <input type="submit" value="Agregar">

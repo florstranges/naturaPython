@@ -1,0 +1,14 @@
+{% extends 'natura/base.html' %}
+
+{% block main %}
+<div class="formularioDesign">
+    <h3 class="text-center py-3">¿Estas seguro que queres borrar {{profile.user}}?</h3>
+    <form method="POST">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Borrar">
+    </form>
+</div>
+
+
+{% endblock %}

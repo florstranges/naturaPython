@@ -1,0 +1,23 @@
+{% extends 'natura/base.html' %}
+{% load static %}
+
+{% block main %}
+
+<h1>Sobre Mi</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <p>Mi nombre es Florencia Stranges, tengo 30 años. Soy diseñadora gráfica y desarrolladora web. Actualmente vendo productos Natura, por eso me pareció interesante hacer el blog de ese tema.</p>
+            <p>Hice la carrera de Frontend en Coderhouse, asi como tambien los cursos de UX/UI básico y avanzado. Me interesó mucho el curso de Python para seguir sumando conocimientos en este mundillo IT.</p>
+            <p>Trabajo como maquetadora web en una agencia de publicidad y a la vez doy clases de Desarrollo Web en Coderhouse.</p>
+            <p>Espero que el blog les parezca interesante y si quieren comprarme algo, pueden encontrar mi tienda virtual en <a href="https://www.naturacosmeticos.com.ar/consultoria/florstranges">https://www.naturacosmeticos.com.ar/consultoria/florstranges</a>.</p>
+        </div>
+        <div class="col-12 col-md-6">
+            <img src="{% static 'natura/assets/Eyes-amico.svg' %}" width="400px" height="100%" class="d-flex m-auto">
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,25 +1,25 @@
 {% extends 'natura/base.html' %}
+{% load static %}
 
 {% block main %}
 
-<div class="formularioDesign my-5">
-    <h2>Buscar producto</h2>
+<h1>Productos publicados</h1>
 
-    <form action="">
-        <div>
-            <label for="criterio_nombre">Nombre:</label>
-            <input type="text" name="criterio_nombre" maxlength="100" required id="criterio_nombre">
-        </div>
-
-        <div class="mt-4">
-            <input type="submit" value="Buscar">
-        </div>
-    </form>
-</div>
+    {% if not object_list %}
+    <h3 class="noInfo">No hay productos publicados</h3>
+    <img src="{% static 'natura/assets/nodata.svg' %}" width="600px" height="100%" class="d-flex m-auto">
+    {% endif %}
 
 <ul>
-    {% for producto in productos %}
-    <li>{{producto}}</li>
+    {% for producto in object_list %}
+    <li class="botonPeque">
+        {{producto}} 
+        <a href="{% url 'productos-detail' producto.id %}"> Detalle </a>
+        {% if user.is_authenticated and producto.publicado == user %}
+        <a href="{% url 'productos-update' producto.id %}"> Actualizar </a>
+        <a href="{% url 'productos-delete' producto.id %}"> Borrar </a>
+        {% endif %}
+    </li>
     {% endfor %}
 </ul>
 

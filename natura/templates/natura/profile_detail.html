@@ -1,0 +1,22 @@
+{% extends 'natura/base.html' %}
+
+{% block main %}
+
+<div class="d-flex justify-content-around mt-3">
+    <div class="w-50 mt-3 botonPeque">
+        <h3>{{object.user}}</h3>
+
+        {% if user.is_authenticated and profile.user == user %}
+        <a href="{% url 'profile-update' profile.id %}"> Actualizar </a>
+        {% endif %}
+
+        <div>
+            <a href="{% url 'profile-list' %}">Volver</a>
+        </div>
+    </div>
+    <img src="{{object.imagen.url}}" width="300px" height="100%">
+
+    
+
+</div>
+{% endblock %}

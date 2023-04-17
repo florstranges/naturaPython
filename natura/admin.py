@@ -1,6 +1,5 @@
 from django.contrib import admin
-from natura.models import Producto, Consultora, Cliente
+from natura.models import Producto, Profile
 
 admin.site.register(Producto)
-admin.site.register(Consultora)
-admin.site.register(Cliente)
+admin.site.register(Profile)

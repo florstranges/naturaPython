@@ -1,0 +1,20 @@
+{% extends 'natura/base.html' %}
+
+{% block main %}
+
+<div class="d-flex justify-content-around mt-3">
+    <div class="w-50 mt-3">
+        <h3>{{object.nombre}}</h3>
+        <h4>{{object.categoria}}</h4>
+        <p>{{object.descripcion}}</p>
+        <h5>Precio: ${{object.precio}}</h5>
+        <div>
+            <a href="{% url 'productos-list' %}">Volver</a>
+        </div>
+    </div>
+    <img src="{{object.imagen.url}}" alt="{{object.nombre}}" title="{{object.nombre}} {{object.categoria}}" width="300px" height="100%">
+
+    
+
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'natura/base.html' %}
+{% load static %}
+
+{% block main %}
+
+<h2>Usuarios Registrados</h2>
+<div class="row p-0 m-0">
+    <div class="col-12 col-md-6">
+        <ul>
+            {% for profile in object_list %}
+            <li class="botonPeque">
+                {{profile}} 
+                <a href="{% url 'profile-detail' profile.id %}"> Detalle </a>
+                {% if user.is_authenticated and profile.user == user %}
+                <a href="{% url 'profile-update' profile.id %}"> Actualizar </a>
+                <a href="{% url 'profile-delete' profile.id %}"> Borrar </a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-12 col-md-6">
+        <img src="{% static 'natura/assets/Personal data-bro.svg' %}" width="400px" height="100%" class="d-flex m-auto">
+    </div>
+</div>
+
+
+
+
+{% endblock %}
